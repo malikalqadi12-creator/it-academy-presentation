@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="عرض تدريبي احترافي: تأمين البنية التحتية للشبكات في عصر الأمن السيبراني — IT Academy">
+<title>تأمين البنية التحتية للشبكات | IT Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand__logo">IT</div>
+    <div class="brand__text">
+      <strong>IT Academy</strong>
+      <span>تأمين البنية التحتية للشبكات</span>
+    </div>
+  </div>
+
+  <div class="topbar__actions">
+    <button class="icon-btn" id="btnOverview" title="فهرس الشرائح (O)" aria-label="فهرس الشرائح">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+        <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+      </svg>
+      <span class="icon-btn__label">الفهرس</span>
+    </button>
+
+    <button class="icon-btn" id="btnNotes" title="ملاحظات المتحدث (N)" aria-label="ملاحظات المتحدث">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16v13H8l-4 4V4z"/><path d="M8 9h8M8 13h5"/>
+      </svg>
+      <span class="icon-btn__label">ملاحظات المتحدث</span>
+    </button>
+
+    <button class="icon-btn" id="btnFull" title="ملء الشاشة (F)" aria-label="ملء الشاشة">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/>
+      </svg>
+      <span class="icon-btn__label">ملء الشاشة</span>
+    </button>
+  </div>
+</header>
+
+<div class="progress"><div class="progress__bar" id="progressBar"></div></div>
+
+<main class="deck" id="deck">
+
+  <!-- 1) الغلاف -->
+  <section class="slide slide--cover is-active" data-title="الغلاف">
+    <div class="cover">
+      <span class="badge">IT Academy · برنامج تدريبي متخصص</span>
+      <h1 class="cover__title">
+        تأمين البنية التحتية للشبكات<br>
+        <span class="grad">في عصر الأمن السيبراني</span>
+      </h1>
+      <p class="cover__sub">من فهم أنواع الشبكات ومكوناتها… إلى حمايتها بمنهجية الثقة الصفرية (Zero Trust)</p>
+
+      <div class="cover__meta">
+        <div><strong>المدة</strong><span>90 دقيقة</span></div>
+        <div><strong>المستوى</strong><span>مبتدئ – متوسط</span></div>
+        <div><strong>المسار</strong><span>أمن الشبكات والبنية التحتية</span></div>
+      </div>
+
+      <p class="hint">استخدم <kbd>←</kbd> <kbd>→</kbd> للتنقل · <kbd>N</kbd> لملاحظات المتحدث · <kbd>O</kbd> للفهرس</p>
+    </div>
+
+    <div class="notes">
+      <p><strong>افتتاحية الجلسة:</strong> رحّب بالمشاركين وقدّم نبذة عن IT Academy، ثم اطرح سؤالاً تفاعلياً: «كم جهازاً متصلاً بشبكتك الآن؟ وكم منها تعرف عنه شيئاً؟» — الإجابة عادةً صادمة، وهي أفضل مدخل للموضوع.</p>
+      <p><strong>الرسالة المحورية:</strong> لم تعد الهجمات السيبرانية تستهدف الأجهزة الطرفية فقط، بل أصبحت تستهدف العمود الفقري للشبكة: أجهزة التوجيه، السويتشات، أنظمة الأسماء DNS، وأنظمة التحكم الصناعي. اختراق البنية التحتية يعني شلّ المنظمة بالكامل، لا مجرد فقدان ملف.</p>
+      <p><strong>أهداف الجلسة:</strong> (1) تصنيف أنواع الشبكات وفهم مكوناتها المادية والبرمجية. (2) تحديد الضوابط الأمنية المناسبة لكل نوع. (3) تحليل تأثير الهجمات على ثالوث CIA والموارد. (4) تقييم مخاطر الأنظمة المتصلة (IoT و SCADA) وتبنّي Zero Trust.</p>
+      <p><strong>ملاحظة للمدرب:</strong> المحتوى مبني على أطر NIST CSF 2.0 و NIST SP 800-207 و ISO/IEC 27001:2022.</p>
+    </div>
+  </section>
+
+  <!-- 2) جدول الأعمال -->
+  <section class="slide" data-title="جدول الأعمال">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">نظرة عامة</span>
+        <h2>جدول الأعمال</h2>
+      </header>
+
+      <div class="agenda">
+        <article class="agenda__item">
+          <span class="agenda__num">01</span>
+          <div>
+            <h3>أنواع الشبكات ومكوناتها وكيفية تأمينها</h3>
+            <p>PAN · LAN · MAN · WAN · WLAN · VPN — المكونات المادية والبرمجية وضوابط الحماية</p>
+          </div>
+        </article>
+
+        <article class="agenda__item">
+          <span class="agenda__num">02</span>
+          <div>
+            <h3>تأثير الأمن السيبراني على البنية التحتية والموارد</h3>
+            <p>ثالوث CIA · هجمات DDoS وبرامج الفدية · الآثار المالية والبشرية والتشغيلية</p>
+          </div>
+        </article>
+
+        <article class="agenda__item">
+          <span class="agenda__num">03</span>
+          <div>
+            <h3>الآثار الأمنية للأنظمة المتصلة بالشبكة</h3>
+            <p>إنترنت الأشياء IoT · أنظمة SCADA/ICS · الحركة الجانبية · استراتيجية Zero Trust</p>
+          </div>
+        </article>
+
+        <article class="agenda__item">
+          <span class="agenda__num">04</span>
+          <div>
+            <h3>السيناريو العملي الشامل والخاتمة</h3>
+            <p>مثال متكامل يجمع كل المفاهيم + خارطة طريق من 6 خطوات</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>المنهجية:</strong> كل محور يبدأ بمفهوم نظري، ثم مثال واقعي، ثم ضوابط تطبيقية قابلة للتنفيذ فوراً في بيئتك.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>اشرح للمشاركين خط سير الجلسة والتوقيت التقريبي: المحور الأول (25 دقيقة)، المحور الثاني (20 دقيقة)، المحور الثالث (25 دقيقة)، السيناريو الشامل والخاتمة (20 دقيقة).</p>
+      <p>أكّد أن المحاور مترابطة: نبدأ بـ«ماذا نملك؟»، ثم «ماذا يحدث لو فُقد؟»، ثم «ما أخطر النقاط وأحدث المنهجيات؟»، ونختم بتطبيق شامل.</p>
+    </div>
+  </section>
+
+  <!-- 3) فاصل القسم الأول -->
+  <section class="slide slide--section" data-title="القسم الأول: أنواع الشبكات">
+    <div class="section-divider">
+      <span class="section-divider__num">01</span>
+      <h2>أنواع الشبكات ومكوناتها<br>وكيفية تأمينها</h2>
+      <p>من الـ PAN إلى الـ WAN: خريطة كاملة للبنية التحتية وضوابط حمايتها</p>
+    </div>
+
+    <div class="notes">
+      <p>القاعدة الذهبية: «كلما اتسع النطاق الجغرافي، اتسع سطح الهجوم، وقلّت السيطرة المباشرة».</p>
+      <p>ذكّر بأن التصنيف حسب النطاق الجغرافي هو الأكثر شيوعاً، لكن هناك تصنيفات أخرى: حسب الطوبولوجيا، وحسب الغرض، وحسب نموذج الإدارة.</p>
+    </div>
+  </section>
+
+  <!-- 4) أنواع الشبكات حسب النطاق -->
+  <section class="slide" data-title="تصنيف الشبكات حسب النطاق الجغرافي">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الأول · 1/4</span>
+        <h2>تصنيف الشبكات حسب النطاق الجغرافي</h2>
+      </header>
+
+      <div class="cards">
+        <article class="card">
+          <span class="card__tag">PAN</span>
+          <h3>شبكة المنطقة الشخصية</h3>
+          <ul class="mini">
+            <li><strong>النطاق:</strong> 1 – 10 أمتار</li>
+            <li><strong>التقنيات:</strong> Bluetooth، NFC، USB</li>
+            <li><strong>مثال:</strong> ساعة ذكية، سماعة، مزامنة هاتف–حاسوب</li>
+            <li><strong>الخطر:</strong> اقتران غير آمن، Bluejacking، سرقة البيانات</li>
+          </ul>
+          <div class="example">
+            <p>موظف يستخدم سماعة <strong>Bluetooth</strong> غير مشفّرة أثناء اجتماع إداري. مهاجم قريب يستخدم أداة مفتوحة المصدر لاعتراض الصوت. <strong>الضابط:</strong> استخدم Bluetooth 5.0+ مع تشفير LE Secure Connections، وأوقف الاقتران التلقائي.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card__tag">LAN</span>
+          <h3>الشبكة المحلية</h3>
+          <ul class="mini">
+            <li><strong>النطاق:</strong> مبنى أو مكتب (حتى ~1 كم)</li>
+            <li><strong>التقنيات:</strong> Ethernet، Wi-Fi، VLANs</li>
+            <li><strong>مثال:</strong> شبكة شركة داخل مقر واحد</li>
+            <li><strong>الخطر:</strong> أجهزة غير مصرّح بها، Broadcast Storms، ثغرات السويتشات</li>
+          </ul>
+          <div class="example">
+            <p>زائر يوصّل لابتوبه بمنفذ شبكة في قاعة الاجتماعات. إن لم يكن المنفذ معطّلاً إدارياً و 802.1X غير مفعّل، <strong>سيحصل على عنوان IP فوراً</strong>. <strong>الضابط:</strong> عطّل المنافذ غير المستخدمة، وفعّل NAC + مصادقة 802.1X.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card__tag">MAN</span>
+          <h3>شبكة المدينة</h3>
+          <ul class="mini">
+            <li><strong>النطاق:</strong> مدينة (حتى ~50 كم)</li>
+            <li><strong>التقنيات:</strong> الألياف البصرية، MPLS، Metro Ethernet</li>
+            <li><strong>مثال:</strong> ربط فروع جامعة أو بلدية</li>
+            <li><strong>الخطر:</strong> الاعتماد على طرف ثالث، التنصت على الروابط</li>
+          </ul>
+          <div class="example">
+            <p>بلدية تربط 12 مدرسة عبر ألياف مشغّل محلي. المهاجم يحتاج فقط <strong>الوصول إلى غرفة توزيع واحدة</strong> لاعتراض كل الحركة. <strong>الضابط:</strong> تشفير IPSec بين المواقع، اتفاقيات SLA أمنية، ومراقبة مستمرة عبر NetFlow.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card__tag">WAN</span>
+          <h3>الشبكة الواسعة</h3>
+          <ul class="mini">
+            <li><strong>النطاق:</strong> دول وقارات</li>
+            <li><strong>التقنيات:</strong> MPLS، SD-WAN، الإنترنت العام</li>
+            <li><strong>مثال:</strong> ربط فروع بنك في عدة دول</li>
+            <li><strong>الخطر:</strong> اختطاف BGP، التنصت، DDoS موزّع</li>
+          </ul>
+          <div class="example">
+            <p>بنك له فرعان في عمّان ودبي. مهاجم يعلن مسارات BGP خاطئة تجعل حركة الفرع تمر عبره (BGP Hijacking). <strong>الضابط:</strong> فعّل RPKI + تصفية البادئات + IPSec فوق الروابط + مراقبة جودة المسار.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><strong>PAN:</strong> هجمات BlueBorne استغلت ثغرات Bluetooth لتنفيذ كود عن بُعد على ملايين الأجهزة دون تفاعل المستخدم.</p>
+      <p><strong>LAN:</strong> الخطر الأكبر هو الجهاز المصاب الذي يُوصل بالشبكة، أو موظف يربط راوتر منزلياً بمنفذ شبكة.</p>
+      <p><strong>MAN:</strong> تعتمد غالباً على مشغّل خارجي، لذا تصبح الثقة تعاقدية أكثر منها تقنية.</p>
+      <p><strong>WAN:</strong> مثال شهير: في 2008 اختُطفت مسارات يوتيوب عبر إعلان BGP خاطئ من مزوّد باكستاني.</p>
+    </div>
+  </section>
+
+  <!-- 5) WLAN و VPN -->
+  <section class="slide" data-title="الشبكات اللاسلكية WLAN والشبكات الافتراضية VPN">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الأول · 2/4</span>
+        <h2>الشبكات اللاسلكية WLAN والشبكات الافتراضية VPN</h2>
+      </header>
+
+      <div class="split">
+        <article class="panel">
+          <h3 class="panel__title">WLAN — الشبكة المحلية اللاسلكية</h3>
+          <ul class="bullets tight">
+            <li>تعتمد على معيار IEEE 802.11 (Wi-Fi 5 / 6 / 7) على موجات راديوية مشتركة.</li>
+            <li><strong>المكونات:</strong> نقاط الوصول (AP)، وحدة التحكم (WLC)، بوابة، نظام مصادقة.</li>
+            <li><strong>المخاطر:</strong> نقاط وصول مزيّفة، Evil Twin، Deauth، ضعف WPS، كلمات مرور مشتركة.</li>
+            <li><strong>الضوابط:</strong> WPA3-Enterprise، مصادقة 802.1X/RADIUS، عزل العملاء، مراقبة الطيف.</li>
+          </ul>
+          <div class="example">
+            <p>مسافر في مطار يتصل تلقائياً بشبكة اسمها <strong>"Airport_Free_WiFi"</strong> أنشأها مهاجم. يوجّهه إلى صفحة دخول مزيفة ويسرق بيانات حسابه البنكي. <strong>الضابط:</strong> عطّل الاتصال التلقائي بالشبكات المفتوحة، واستخدم VPN إلزامياً عند السفر.</p>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3 class="panel__title">VPN — الشبكة الافتراضية الخاصة</h3>
+          <ul class="bullets tight">
+            <li>نفق مشفّر يعبر شبكة غير موثوقة ليربط موقعين أو مستخدماً بالموارد.</li>
+            <li><strong>الأنواع:</strong> Site-to-Site، Remote Access، SSL/TLS VPN، IPSec VPN.</li>
+            <li><strong>المخاطر:</strong> Split Tunneling غير مضبوط، تسريب DNS، جهاز مصاب عبر النفق.</li>
+            <li><strong>الضوابط:</strong> MFA، شهادات رقمية، فحص الجهاز قبل الاتصال (Posture Check).</li>
+          </ul>
+          <div class="example">
+            <p>موظف يعمل من المنزل، جهازه مصاب ببرمجية تجسس. يتصل بـ VPN الشركة، فتصبح <strong>البرمجية داخل الشبكة الداخلية</strong> وكأنها موظف شرعي. <strong>الضابط:</strong> Posture Check يفحص المضاد للفيروسات وحالة التحديثات قبل السماح بالاتصال.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>تحوّل معماري:</strong> الـ VPN التقليدي يمنح الثقة الكاملة بعد الاتصال. البديل الحديث هو <strong>ZTNA</strong> الذي يمنح وصولاً دقيقاً إلى تطبيق محدد فقط، لا إلى الشبكة بأكملها.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><strong>WLAN:</strong> WPA3 يوفّر حماية أفضل عبر SAE ويشفّر الشبكات المفتوحة بـ OWE، لكنه لا يحمي من كلمة مرور ضعيفة أو جهاز مصاب.</p>
+      <p><strong>مثال Evil Twin:</strong> شائع في المطارات والفنادق. الضابط: تعليم الموظفين استخدام VPN إلزامي.</p>
+      <p><strong>VPN:</strong> المشكلة الأكبر أن الجهاز المصاب يصبح جسراً للهجوم داخل الشبكة. هنا يأتي دور ZTNA.</p>
+    </div>
+  </section>
+
+  <!-- 6) المكونات -->
+  <section class="slide" data-title="مكونات البنية التحتية">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الأول · 3/4</span>
+        <h2>مكونات البنية التحتية للشبكة</h2>
+      </header>
+
+      <div class="split">
+        <article class="panel panel--physical">
+          <h3 class="panel__title">المكونات المادية (Physical)</h3>
+          <ul class="bullets tight">
+            <li><strong>أجهزة الربط والتوجيه:</strong> Router، Switch، Firewall، Load Balancer.</li>
+            <li><strong>وسائط النقل:</strong> UTP، ألياف بصرية، موجات راديوية.</li>
+            <li><strong>الشبكات اللاسلكية:</strong> Access Points، وحدات تحكم WLC.</li>
+            <li><strong>الخوادم ومراكز البيانات:</strong> Servers، NAS/SAN، UPS.</li>
+            <li><strong>الأجهزة الطرفية:</strong> حواسيب، هواتف، طابعات، كاميرات IP، حساسات.</li>
+          </ul>
+          <div class="example">
+            <p>مخرب يدخل غرفة شبكة غير مقفلة ويسحب كابل ألياف رئيسي. <strong>كل الفرع يفقد الاتصال لساعات</strong>. <strong>الضابط:</strong> أقفال إلكترونية ببطاقة، كاميرات مراقبة، مسارات ألياف مزدوجة (Redundancy).</p>
+          </div>
+        </article>
+
+        <article class="panel panel--logical">
+          <h3 class="panel__title">المكونات البرمجية (Logical)</h3>
+          <ul class="bullets tight">
+            <li><strong>أنظمة التشغيل والبرامج الثابتة:</strong> IOS/NX-OS، pfSense، Firmware.</li>
+            <li><strong>البروتوكولات:</strong> TCP/IP، DNS، DHCP، ARP، BGP، OSPF.</li>
+            <li><strong>خدمات الهوية والوصول:</strong> Active Directory، LDAP، RADIUS، TACACS+.</li>
+            <li><strong>الإدارة والمراقبة:</strong> NMS، SIEM، SNMP، NetFlow، Syslog.</li>
+            <li><strong>السياسات:</strong> قواعد الجدار الناري، ACLs، تقسيم الشبكة، النسخ الاحتياطي.</li>
+          </ul>
+          <div class="example">
+            <p>مهاجم يسمّم ذاكرة DNS المؤقتة (DNS Cache Poisoning) على خادم داخلي. عند كتابة الموظفين لعنوان البنك، <strong>يُعاد توجيههم إلى موقع مزيف</strong> يسرق بيانات الدخول. <strong>الضابط:</strong> DNSSEC + مراقبة استجابات DNS + تصفية الوجهات.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout callout--warn">
+        <strong>لا تنسَ العنصر الثالث:</strong> العنصر البشري — المستخدمون، مهندسو الشبكة، المزوّدون، المتعاقدون. هو أخطر نقطة ضعف وأقوى خط دفاع في الوقت نفسه.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>البنية التحتية ليست «صندوقاً واحداً» بل طبقات متشابكة: الوصول، التوزيع، النواة، ثم الخدمات (DNS, DHCP, AD). اختراق أي طبقة قد يمنح مساراً للبقية.</p>
+      <p>البروتوكولات الأساسية مثل DNS و ARP و DHCP صُمّمت أصلاً دون مصادقة، وهذا سبب جذري لكثير من الهجمات الداخلية. لذلك نستخدم DNSSEC و DAI و DHCP Snooping.</p>
+    </div>
+  </section>
+
+  <!-- 7) تأمين الشبكات -->
+  <section class="slide" data-title="تأمين الشبكات: الضوابط العملية">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الأول · 4/4</span>
+        <h2>تأمين الشبكات: الضوابط العملية</h2>
+      </header>
+
+      <div class="cards cards--five">
+        <article class="card">
+          <h3>1 · العزل والتقسيم</h3>
+          <p>تقسيم الشبكة إلى VLANs، عزل الأصول الحرجة، إنشاء DMZ للخدمات العامة، والتقسيم الدقيق (Microsegmentation).</p>
+          <div class="example">
+            <p>اخترق المهاجم شبكة الكاميرات، لكن <strong>لا يستطيع الوصول إلى شبكة الخوادم المالية</strong> بسبب VLAN منفصلة وقواعد جدار ناري صارمة.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>2 · التحكم بالوصول</h3>
+          <p>NAC، مصادقة 802.1X، أقل صلاحية ممكنة، MFA، إدارة دورة حياة الحسابات.</p>
+          <div class="example">
+            <p>موظف يقدّم استقالته ويحتفظ بجهازه. <strong>بدون إلغاء فوري للحساب</strong>، يمكنه الوصول لأسابيع. <strong>الضابط:</strong> ربط نظام HR بنظام IAM لإلغاء تلقائي.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>3 · حماية المحيط والداخل</h3>
+          <p>NGFW، IDS/IPS، WAF، وحلول EDR/XDR للأجهزة الطرفية.</p>
+          <div class="example">
+            <p>برمجية فدية تحاول الاتصال بخادم تحكم (C2). <strong>NGFW يكتشف الاتصال ويحجبه</strong> قبل تشفير الملفات.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>4 · التشفير وإدارة المفاتيح</h3>
+          <p>WPA3 للاسلكي، IPSec للروابط، TLS 1.3 للتطبيقات، SSH بدل Telnet، PKI.</p>
+          <div class="example">
+            <p>مهاجم يعترض حركة بين خادم التطبيق وقاعدة البيانات. <strong>بسبب TLS 1.3</strong>، يرى فقط بيانات مشفّرة بلا قيمة.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>5 · المراقبة والاستجابة</h3>
+          <p>SIEM لتجميع السجلات، NetFlow، نسخ احتياطي 3-2-1، خطة استجابة للحوادث، تمارين دورية.</p>
+          <div class="example">
+            <p>موظف يسجّل دخولاً من دولة أخرى الساعة 3 فجراً. <strong>SIEM يُطلق تنبيهاً فورياً</strong> ويكتشف أن الحساب مخترق.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr><th>نوع الشبكة</th><th>الضابط الأمني الأهم</th><th>الخطأ الشائع</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PAN</td><td>تعطيل البلوتوث/NFC عند عدم الحاجة</td><td>ترك الاقتران مفتوحاً دائماً</td></tr>
+            <tr><td>LAN</td><td>VLANs + 802.1X + تعطيل المنافذ</td><td>شبكة مسطّحة واحدة للجميع</td></tr>
+            <tr><td>WLAN</td><td>WPA3-Enterprise + عزل العملاء</td><td>كلمة مرور مشتركة لكل الموظفين</td></tr>
+            <tr><td>MAN</td><td>تشفير الروابط + SLA أمني</td><td>الثقة العمياء في المزوّد</td></tr>
+            <tr><td>WAN</td><td>SD-WAN آمن + IPSec + تصفية BGP</td><td>الإنترنت العام دون تشفير</td></tr>
+            <tr><td>VPN</td><td>MFA + شهادات + Posture Check</td><td>وصول كامل للشبكة بعد الاتصال</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><strong>العزل والتقسيم:</strong> أهم ضابط منفرد لتقليل أثر الاختراق. التقسيم لا يمنع الاختراق، لكنه يحدّ من انتشاره بشكل هائل.</p>
+      <p><strong>المراقبة والاستجابة:</strong> «لا يمكنك حماية ما لا تراه». بدون سجلات مركزية، قد يبقى المهاجم داخل الشبكة لأشهر.</p>
+    </div>
+  </section>
+
+  <!-- 8) فاصل القسم الثاني -->
+  <section class="slide slide--section" data-title="القسم الثاني: تأثير الأمن السيبراني">
+    <div class="section-divider">
+      <span class="section-divider__num">02</span>
+      <h2>تأثير الأمن السيبراني على<br>البنية التحتية والموارد</h2>
+      <p>ثالوث CIA · هجمات DDoS وبرامج الفدية · الآثار المالية والبشرية والتشغيلية</p>
+    </div>
+
+    <div class="notes">
+      <p>انتقل من «ماذا نملك» إلى «ماذا يحدث لو فُقد». هذا القسم الأكثر تأثيراً في صنّاع القرار.</p>
+    </div>
+  </section>
+
+  <!-- 9) CIA -->
+  <section class="slide" data-title="ثالوث CIA">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الثاني · 1/3</span>
+        <h2>ثالوث CIA: ما الذي نحميه فعلاً؟</h2>
+      </header>
+
+      <div class="cards cards--three">
+        <article class="card card--c">
+          <span class="card__tag">C</span>
+          <h3>السرية · Confidentiality</h3>
+          <p><strong>التعريف:</strong> ضمان عدم وصول غير المصرّح لهم إلى البيانات.</p>
+          <p><strong>كيف تُستهدف:</strong> التنصت، ARP Spoofing، تسريب قواعد بيانات، اعتراض جلسات غير مشفّرة.</p>
+          <p><strong>الضوابط:</strong> التشفير، التحكم بالوصول، التقسيم، تصنيف البيانات.</p>
+          <div class="example">
+            <p>شركة اتصالات تُخترق وتُسرّب بيانات 10 ملايين مشترك. <strong>غرامات تنظيمية + دعاوى جماعية</strong>. <strong>الضابط:</strong> تشفير كامل + تصنيف البيانات + تقليل ما يُخزَّن أصلاً.</p>
+          </div>
+        </article>
+
+        <article class="card card--i">
+          <span class="card__tag">I</span>
+          <h3>السلامة · Integrity</h3>
+          <p><strong>التعريف:</strong> ضمان أن البيانات والأنظمة لم تُعدّل بشكل غير مصرّح به.</p>
+          <p><strong>كيف تُستهدف:</strong> تسميم DNS، تعديل قواعد التوجيه، حقن أوامر، تلاعب بسجلات النظام.</p>
+          <p><strong>الضوابط:</strong> التوقيع الرقمي، Hashing، التحقق من السلامة، سجلات غير قابلة للتعديل.</p>
+          <div class="example">
+            <p>مهاجم يعدّل فاتورة إلكترونية بقيمة 1000 دينار لتصبح <strong>100,000 دينار</strong> قبل إرسالها للعميل. <strong>الضابط:</strong> توقيع رقمي على الفواتير + Hashing للكشف عن أي تعديل.</p>
+          </div>
+        </article>
+
+        <article class="card card--a">
+          <span class="card__tag">A</span>
+          <h3>التوفر · Availability</h3>
+          <p><strong>التعريف:</strong> ضمان أن الخدمات والأنظمة متاحة عند الحاجة إليها.</p>
+          <p><strong>كيف تُستهدف:</strong> DDoS، برامج الفدية، تعطيل مراكز البيانات، انقطاع الطاقة.</p>
+          <p><strong>الضوابط:</strong> التوزيع الجغرافي، النسخ الاحتياطي، الخطط البديلة، الحماية ضد DDoS.</p>
+          <div class="example">
+            <p>متجر إلكتروني في موسم الخصومات يتعرض لهجوم DDoS. <strong>كل ساعة توقف = خسارة آلاف الدنانير</strong>. <strong>الضابط:</strong> CDN + تخفيف DDoS + خوادم موزّعة جغرافياً.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout callout--warn">
+        <strong>ملاحظة جوهرية للبيئات الصناعية (OT/ICS):</strong> ينقلب ترتيب الأولويات إلى <strong>AIC</strong> — التوفر أولاً، ثم السلامة، ثم السرية. إيقاف خط إنتاج لتطبيق تحديث قد يكون أخطر من الثغرة نفسها.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><strong>السرية:</strong> الضابط الأساسي هو التشفير أثناء النقل وفي حالة السكون.</p>
+      <p><strong>السلامة:</strong> DNS Cache Poisoning مثال كلاسيكي — يُعاد توجيه المستخدمين دون علمهم.</p>
+      <p><strong>التوفر:</strong> أكثر ما يؤلم المؤسسات. مثال 2016: هجوم على Dyn عطّل تويتر ونتفليكس وغيرها لساعات.</p>
+    </div>
+  </section>
+
+  <!-- 10) الهجمات -->
+  <section class="slide" data-title="أبرز الهجمات">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الثاني · 2/3</span>
+        <h2>أبرز الهجمات التي تستهدف البنية التحتية</h2>
+      </header>
+
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr><th>نوع الهجوم</th><th>آلية العمل</th><th>مثال عملي</th><th>الضابط</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DDoS</strong></td>
+              <td>إغراق النطاق أو استنزاف موارد الخادم من آلاف المصادر</td>
+              <td>بوتنت Mirai (2016) استخدم كاميرات مصابة لتعطيل Dyn</td>
+              <td>CDN + تخفيف DDoS + Rate Limiting</td>
+            </tr>
+            <tr>
+              <td><strong>برامج الفدية</strong></td>
+              <td>تشفير الملفات وطلب فدية مقابل المفتاح</td>
+              <td>WannaCry (2017) أصاب 200 ألف نظام في 150 دولة</td>
+              <td>نسخ احتياطي 3-2-1 + EDR + تقسيم</td>
+            </tr>
+            <tr>
+              <td><strong>رجل في المنتصف</strong></td>
+              <td>ARP/DNS Spoofing لاعتراض الاتصال</td>
+              <td>مهاجم يعترض جلسة مصرفية غير مشفّرة على Wi-Fi عام</td>
+              <td>تشفير شامل + DAI + شهادات</td>
+            </tr>
+            <tr>
+              <td><strong>اختراق سلسلة التوريد</strong></td>
+              <td>تلويث تحديث برمجي موثوق لتمرير كود خبيث</td>
+              <td>SolarWinds (2020) وصل لآلاف العملاء بينهم حكومات</td>
+              <td>التحقق من التحديثات + SBOM</td>
+            </tr>
+            <tr>
+              <td><strong>التهديد الداخلي</strong></td>
+              <td>موظف مهمل أو غير راضٍ يستغل صلاحياته</td>
+              <td>موظف يحوّل بيانات العملاء إلى قرص USB قبل مغادرته</td>
+              <td>Least Privilege + UEBA + فصل المهام</td>
+            </tr>
+            <tr>
+              <td><strong>استغلال الثغرات</strong></td>
+              <td>استهداف أنظمة غير محدَّثة أو ثغرات يوم الصفر</td>
+              <td>ثغرة EternalBlue استُخدمت في WannaCry</td>
+              <td>إدارة التصحيحات + تقليل سطح الهجوم</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><strong>DDoS:</strong> ثلاث طبقات — الحجمية، البروتوكولية، التطبيقية. مثال Mirai الشهير.</p>
+      <p><strong>برامج الفدية:</strong> مثال Colonial Pipeline 2021 أوقف خط أنابيب يزود نصف الساحل الشرقي الأميركي بالوقود.</p>
+      <p><strong>سلسلة التوريد:</strong> الثقة في الموردين يجب أن تكون مشروطة ومُتحقَّقاً منها.</p>
+      <p><strong>التهديد الداخلي:</strong> ليس بالضرورة خبيثاً — كثير من الحوادث تنتج عن خطأ بشري.</p>
+    </div>
+  </section>
+
+  <!-- 11) الآثار -->
+  <section class="slide" data-title="الآثار المالية والبشرية">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الثاني · 3/3</span>
+        <h2>الآثار: مالية · بشرية · تشغيلية · قانونية</h2>
+      </header>
+
+      <div class="cards">
+        <article class="card">
+          <h3>💰 الأثر المالي</h3>
+          <ul class="mini">
+            <li>تكاليف الاستجابة والتحقيق الجنائي الرقمي</li>
+            <li>فدية + تكاليف فك التشفير والاستعادة</li>
+            <li>خسارة إيرادات أثناء التوقف</li>
+            <li>غرامات تنظيمية (تصل إلى 4% من الإيرادات في GDPR)</li>
+            <li>ارتفاع أقساط التأمين السيبراني</li>
+          </ul>
+          <div class="example">
+            <p>شركة متوسطة تتعرض لهجوم فدية. <strong>التكلفة الإجمالية:</strong> فدية 50 ألف دولار + استشارات 30 ألف + خسارة إيرادات 200 ألف + ترقية أمنية 100 ألف. <strong>المجموع: ~380 ألف دولار</strong> من حادث واحد.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>👥 الأثر البشري</h3>
+          <ul class="mini">
+            <li>تسريب بيانات شخصية وانتحال هوية</li>
+            <li>تعطيل خدمات صحية وطوارئ تهدد الأرواح</li>
+            <li>ضغط نفسي وإرهاق فرق تقنية المعلومات</li>
+            <li>تسريح موظفين نتيجة الخسائر</li>
+            <li>فقدان ثقة العملاء والموظفين</li>
+          </ul>
+          <div class="example">
+            <p>مستشفى يتعرض لهجوم فدية، فيتعطل نظام السجلات الطبية. <strong>تُؤجَّل عمليات جراحية وتُحوَّل حالات طوارئ لمستشفيات أخرى</strong>. الأثر هنا على الحياة مباشرة، لا على الأرباح فقط.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>⚙️ الأثر التشغيلي</h3>
+          <ul class="mini">
+            <li>توقف الإنتاج وخطوط التصنيع</li>
+            <li>انقطاع سلاسل الإمداد والخدمات</li>
+            <li>فقدان بيانات حرجة أو تشوّهها</li>
+            <li>زمن استعادة طويل (أسابيع إلى أشهر)</li>
+            <li>تعطّل الأنظمة الاحتياطية إذا كانت متصلة</li>
+          </ul>
+          <div class="example">
+            <p>مصنع أغذية يتعرض لهجوم، فيتوقف خط الإنتاج. <strong>المنتجات الطازجة تتلف</strong>، والعقود مع الموزعين تُلغى، والعملاء يتحولون لمنافس.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>⚖️ الأثر القانوني والسمعي</h3>
+          <ul class="mini">
+            <li>دعاوى قضائية وتعويضات</li>
+            <li>متطلبات إبلاغ إلزامية للجهات التنظيمية</li>
+            <li>فقدان شهادات الامتثال (ISO 27001، PCI-DSS)</li>
+            <li>تضرر العلامة التجارية وفقدان العقود</li>
+            <li>تراجع ثقة المستثمرين</li>
+          </ul>
+          <div class="example">
+            <p>شركة تأمين تفقد شهادة ISO 27001 بعد اختراق. <strong>تفقد عقداً حكومياً بقيمة 2 مليون دينار</strong> لأن الامتثال شرط تعاقدي.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>مؤشر مرجعي:</strong> متوسط الكلفة العالمية لاختراق البيانات بلغ نحو <strong>4.88 مليون دولار</strong> في تقرير IBM لعام 2024 — والقطاع الصحي والصناعي من الأعلى كلفة.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>لماذا الأثر المالي أكبر مما يبدو؟ لأن التكلفة لا تتوقف عند لحظة الاكتشاف، بل تشمل الاستجابة والتحقيق والتعويضات وتطوير الضوابط لاحقاً.</p>
+      <p>انتبه: النسخ الاحتياطي المتصل بالشبكة قد يُشفَّر أيضاً في هجمات الفدية الحديثة، لذلك يُوصى بنسخة Offline أو Immutable.</p>
+    </div>
+  </section>
+
+  <!-- 12) فاصل القسم الثالث -->
+  <section class="slide slide--section" data-title="القسم الثالث: الأنظمة المتصلة">
+    <div class="section-divider">
+      <span class="section-divider__num">03</span>
+      <h2>الآثار الأمنية للأنظمة<br>المتصلة بالشبكة</h2>
+      <p>إنترنت الأشياء IoT · أنظمة SCADA/ICS · الحركة الجانبية · Zero Trust</p>
+    </div>
+
+    <div class="notes">
+      <p>القاسم المشترك بين IoT و SCADA هو أنهما لم يُصمَّما أصلاً مع وضع الأمن السيبراني في الاعتبار — الأولوية كانت الوظيفة والتكلفة، لا الحماية.</p>
+    </div>
+  </section>
+
+  <!-- 13) IoT -->
+  <section class="slide" data-title="إنترنت الأشياء IoT">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الثالث · 1/3</span>
+        <h2>إنترنت الأشياء (IoT): المخاطر والضوابط</h2>
+      </header>
+
+      <div class="split">
+        <article class="panel panel--danger">
+          <h3 class="panel__title">لماذا تُعدّ هدفاً مثاليًا للمهاجم؟</h3>
+          <ul class="bullets tight">
+            <li><strong>كلمات مرور افتراضية</strong> لا تُغيَّر أبداً (admin/admin).</li>
+            <li><strong>برامج ثابتة قديمة</strong> بلا آلية تحديث آمنة.</li>
+            <li><strong>لا يوجد وكيل حماية</strong> (Antivirus/EDR) على الجهاز.</li>
+            <li><strong>عمر تشغيلي طويل</strong> (5–15 سنة) يتجاوز عمر دعم المصنّع.</li>
+            <li><strong>اتصال مباشر بالإنترنت</strong> ومنافذ إدارة مكشوفة.</li>
+            <li><strong>قدرة حوسبة محدودة</strong> تمنع تطبيق التشفير القوي.</li>
+          </ul>
+        </article>
+
+        <article class="panel panel--safe">
+          <h3 class="panel__title">ضوابط الحماية العملية</h3>
+          <ul class="bullets tight">
+            <li><strong>عزل الشبكة:</strong> VLAN منفصلة تماماً مع قواعد جدار ناري صارمة.</li>
+            <li><strong>منع الاتصال الخارجي</strong> غير الضروري.</li>
+            <li><strong>تغيير البيانات الافتراضية</strong> وتعطيل الخدمات غير المستخدمة.</li>
+            <li><strong>إدارة التحديثات</strong> مركزيًا وجدولة دورية.</li>
+            <li><strong>مراقبة السلوك:</strong> بناء Baseline وتنبيه عند أي انحراف.</li>
+            <li><strong>مصادقة الأجهزة</strong> عبر 802.1X أو شهادات.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="example">
+        <p><strong>سيناريو واقعي:</strong> شركة صغيرة لديها 20 كاميرا IP بكلمة مرور <code>admin/admin</code> الافتراضية. مهاجم يكتشفها عبر محرك بحث مفتوح (Shodan)، يثبّت أداة دائمة، ثم يستخدم إحدى الكاميرات كنقطة ارتكاز للانتقال إلى شبكة الشركة الداخلية. <strong>النتيجة:</strong> سرقة بيانات العملاء عبر خادم المبيعات. <strong>الضابط:</strong> عزل الكاميرات في VLAN منفصلة تمنعها من الوصول لأي شيء آخر.</p>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>عدد أجهزة IoT المتصلة بالإنترنت يُقدّر بعشرات المليارات، وكثير منها في بيئات مؤسسية دون أي إدارة أمنية.</p>
+      <p>سيناريو هجوم نموذجي: مهاجم يجد كاميرا بمنفذ مفتوح، يجرب كلمة المرور الافتراضية فينجح، يثبّت أداة، ثم ينتقل للشبكة الداخلية — كل هذا دون أن يلاحظ أحد.</p>
+      <p><strong>توصية عملية:</strong> أجرِ جرداً كاملاً لأجهزة IoT، وحدّد لكل جهاز: من يحتاجه؟ ما البيانات التي يرسلها؟ إلى أين يتصل؟</p>
+    </div>
+  </section>
+
+  <!-- 14) SCADA -->
+  <section class="slide" data-title="أنظمة SCADA/ICS">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الثالث · 2/3</span>
+        <h2>أنظمة التحكم الصناعي SCADA / ICS / OT</h2>
+      </header>
+
+      <div class="cards cards--three">
+        <article class="card">
+          <h3>الفروق الجوهرية عن IT</h3>
+          <ul class="mini">
+            <li>الأولوية: السلامة ثم التوفر، لا السرية.</li>
+            <li>أجهزة تعمل لعشرين عاماً ولا يمكن إيقافها للتصحيح.</li>
+            <li>بروتوكولات قديمة (Modbus، DNP3) بلا مصادقة.</li>
+            <li>دورات تحديث بطيئة جداً ومخاطرة عالية.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>أمثلة واقعية</h3>
+          <ul class="mini">
+            <li><strong>Stuxnet (2010):</strong> أول سلاح سيبراني يستهدف أنظمة تحكم صناعي.</li>
+            <li><strong>أوكرانيا (2015):</strong> انقطاع الكهرباء عن مئات الآلاف.</li>
+            <li><strong>Colonial Pipeline (2021):</strong> إيقاف خط أنابيب وقود كامل.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>ضوابط الحماية</h3>
+          <ul class="mini">
+            <li>تطبيق نموذج Purdue للفصل بين المستويات.</li>
+            <li>Industrial DMZ بين المستويين 3 و 4.</li>
+            <li>مراقبة سلبية عبر SPAN/TAP فقط.</li>
+            <li>منع الربط المباشر بالإنترنت وضبط USB.</li>
+            <li>الالتزام بمعيار IEC 62443.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="example">
+        <p><strong>سيناريو عملي — محطة معالجة مياه:</strong> المستوى 0 (مضخات) والمستوى 1 (PLC) لا يمكن إيقافهما للتحديث. هناك ثغرة في PLC معروف بها. <strong>الضابط التعويضي:</strong> بدلاً من إيقاف PLC، نضع Industrial DMZ بين شبكة OT وشبكة IT، ونراقب الحركة سلبياً، ونمنع أي اتصال مباشر بالإنترنت، ونستخدم جداراً نارياً صناعياً يسمح فقط ببروتوكول Modbus بين عناوين محددة.</p>
+      </div>
+
+      <div class="callout callout--warn">
+        <strong>تحذير أساسي:</strong> لا تُطبّق أدوات أمن IT مباشرة على بيئة OT — الفحص النشط أو إيقاف جهاز للتصحيح قد يؤدي إلى توقف خط إنتاج كامل.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><strong>نموذج Purdue:</strong> المستوى 0 (المستشعرات)، 1 (PLC)، 2 (أنظمة الإشراف)، 3 (العمليات)، 3.5 (DMZ صناعية)، 4 (المؤسسة)، 5 (الإنترنت). لا اتصال مباشر بين 3.5 و 4.</p>
+      <p><strong>لماذا الثغرات لا تُصلَح؟</strong> لأن الجهاز يعمل على خط إنتاج لا يتوقف، أو المصنّع لم يعد يدعمه. هنا نستخدم ضوابط تعويضية.</p>
+    </div>
+  </section>
+
+  <!-- 15) الحركة الجانبية و Zero Trust -->
+  <section class="slide" data-title="الحركة الجانبية و Zero Trust">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">القسم الثالث · 3/3</span>
+        <h2>الحركة الجانبية واستراتيجية الثقة الصفرية</h2>
+      </header>
+
+      <div class="split">
+        <article class="panel panel--danger">
+          <h3 class="panel__title">الحركة الجانبية (Lateral Movement)</h3>
+          <ul class="bullets tight">
+            <li>بعد اختراق جهاز طرفي واحد، يتنقل المهاجم بحثاً عن أصول عالية القيمة.</li>
+            <li><strong>أدوات:</strong> PsExec، WMI، RDP، SMB، Mimikatz، Pass-the-Hash، BloodHound.</li>
+            <li><strong>لماذا تنجح؟</strong> شبكة مسطّحة، ثقة داخلية مطلقة، حسابات متميزة كثيرة.</li>
+            <li><strong>المؤشرات:</strong> تسجيل دخول غير معتاد، اتصالات SMB داخلية غريبة.</li>
+          </ul>
+          <div class="example">
+            <p><strong>السيناريو:</strong> موظف يفتح مرفقاً ضاراً → يُصاب حاسوبه → المهاجم يستخرج بيانات الاعتماد من الذاكرة بـ Mimikatz → يتصل بخادم ملفات عبر SMB → يجد ملفاً فيه بيانات مدير النظام → ينتقل إلى Domain Controller → <strong>يسيطر على الشبكة بالكامل في ساعات</strong>.</p>
+          </div>
+        </article>
+
+        <article class="panel panel--safe">
+          <h3 class="panel__title">استراتيجية Zero Trust</h3>
+          <ul class="bullets tight">
+            <li><strong>المبدأ:</strong> «لا تثق أبداً، تحقّق دائماً» — لا تمييز بين داخل وخارج الشبكة.</li>
+            <li><strong>الركائز:</strong> الهوية، الجهاز، الشبكة، التطبيق، البيانات، المراقبة المستمرة.</li>
+            <li><strong>التنفيذ:</strong> MFA، أقل صلاحية، وصول فوري مؤقت (JIT)، Microsegmentation.</li>
+            <li><strong>الفلسفة:</strong> افترض الاختراق (Assume Breach) وصمّم للاحتواء لا للمنع فقط.</li>
+            <li><strong>المرجع:</strong> NIST SP 800-207.</li>
+          </ul>
+          <div class="example">
+            <p><strong>التطبيق العملي:</strong> بدلاً من أن يرى موظف المبيعات خادم المالية عبر الشبكة، يمنحه Zero Trust وصولاً لتطبيق CRM فقط. حتى لو اخترق المهاجم حاسوبه، <strong>لا يستطيع الوصول لأي شيء خارج نطاق CRM</strong>.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>الأثر العملي:</strong> تطبيق Zero Trust يقلّص مساحة الحركة الجانبية بشكل جذري — بدلاً من الوصول الحر بين كل الأجهزة، يصبح كل اتصال مبرَّراً ومُصادَقاً عليه.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p><strong>كيف نمنع الحركة الجانبية؟</strong> (1) تقسيم شبكة دقيق. (2) إدارة صلاحيات صارمة. (3) حماية الحسابات المتميزة. (4) UEBA/NDR. (5) تعطيل NTLM و SMBv1.</p>
+      <p><strong>Zero Trust ليست منتجاً بل رحلة:</strong> ابدأ بتحديد الأصول الأكثر حرجاً، ثم تدفقات البيانات، ثم سياسات الوصول، ثم التوسع تدريجياً.</p>
+    </div>
+  </section>
+
+  <!-- 16) السيناريو الشامل (جديد) -->
+  <section class="slide" data-title="سيناريو عملي شامل">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">شريحة تطبيقية · تجمع كل المفاهيم</span>
+        <h2>سيناريو عملي شامل: شركة «الرؤية» للخدمات اللوجستية</h2>
+      </header>
+
+      <div class="callout" style="margin-bottom: 1rem;">
+        <strong>السياق:</strong> شركة لوجستية متوسطة في عمّان، لها مركز رئيسي و3 فروع في إربد والعقبة والزرقاء. تستخدم نظام تتبع شحنات عبر الإنترنت، ومستودعات بمستشعرات IoT لقياس الحرارة، ومستودع تبريد يعمل بـ SCADA. لديها 120 موظفاً، بعضهم يعمل عن بعد.
+      </div>
+
+      <div class="scenario">
+        <article class="scenario__phase scenario__phase--attack">
+          <h3>🎯 مرحلة الهجوم (يوم 1 – يوم 45)</h3>
+          <ul>
+            <li>المهاجم يكتشف كاميرا IP بكلمة مرور افتراضية في فرع الزرقاء عبر Shodan.</li>
+            <li>يستخدم ثغرة <strong>Bluetooth</strong> في جهاز تتبع شحنة لمندوب ليصبح نقطة ارتكاز أخرى.</li>
+            <li>يستغل شبكة <strong>Wi-Fi عامة</strong> في مقهى قريب من الفرع لاعتراض جلسات غير مشفّرة.</li>
+            <li>يستخرج بيانات اعتماد من حاسوب موظف، وينتقل عبر <strong>VPN</strong> للشبكة الرئيسية.</li>
+            <li>ينتشر عبر <strong>SMB</strong> بين الفروع (حركة جانبية).</li>
+          </ul>
+        </article>
+
+        <article class="scenario__phase scenario__phase--impact">
+          <h3>💥 مرحلة الأثر (يوم 46)</h3>
+          <ul>
+            <li>يشفّر المهاجم قواعد بيانات الشحنات → <strong>انتهاك التوفر (A)</strong>.</li>
+            <li>يعدّل فواتير إلكترونية بقيم مضاعفة → <strong>انتهاك السلامة (I)</strong>.</li>
+            <li>يسرّب بيانات 50 ألف عميل → <strong>انتهاك السرية (C)</strong>.</li>
+            <li>يتوقف مستودع التبريد عن التسجيل → <strong>خطر على سلامة البضائع</strong>.</li>
+            <li>توقف العمليات 3 أيام = خسارة تقديرية <strong>~500 ألف دينار</strong> + فقدان عقدين + غرامة تنظيمية.</li>
+          </ul>
+        </article>
+
+        <article class="scenario__phase scenario__phase--defense">
+          <h3>🛡️ مرحلة الدفاع (كيف كان يجب أن تكون؟)</h3>
+          <ul>
+            <li><strong>عزل أجهزة IoT</strong> في VLAN منفصلة، وتغيير كلمات المرور الافتراضية.</li>
+            <li><strong>WPA3-Enterprise</strong> في كل الفروع + 802.1X على المنافذ.</li>
+            <li><strong>VPN بـ MFA + Posture Check</strong> بدل الوصول الكامل.</li>
+            <li><strong>Microsegmentation</strong> بين الفروع تمنع الحركة الجانبية.</li>
+            <li><strong>Zero Trust</strong> لكل تطبيق بدل الثقة الكاملة بالشبكة الداخلية.</li>
+            <li><strong>Industrial DMZ</strong> بين شبكة OT ومستودع التبريد وشبكة IT.</li>
+            <li><strong>SIEM + NetFlow</strong> لكشف السلوك الشاذ خلال ساعات، لا أسابيع.</li>
+            <li><strong>نسخ احتياطي 3-2-1 + Immutable</strong> للاستعادة السريعة دون فدية.</li>
+          </ul>
+        </article>
+
+        <article class="scenario__phase scenario__phase--lesson">
+          <h3>📚 الدروس المستفادة</h3>
+          <ul>
+            <li>كل ثغرة صغيرة قد تكون بداية سلسلة كاملة — <strong>الحركة الجانبية</strong> تعتمد على إهمال واحد.</li>
+            <li>الأمن ليس حلاً واحداً بل <strong>طبقات متعاونة</strong> من PAN إلى WAN إلى IoT و SCADA.</li>
+            <li>ثالوث <strong>CIA</strong> ليس نظرياً — كل عنصر له كلفة مالية حقيقية.</li>
+            <li><strong>Zero Trust</strong> ليست ترفاً بل ضرورة في بيئات العمل الحديثة.</li>
+            <li>الاستثمار في الأمن قبل الحادث <strong>أرخص بعشرات المرات</strong> من الاستجابة بعده.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>هذه الشريحة هي تتويج العرض — أمضِ فيها 8–10 دقائق، وتفاعل مع المشاركين بسؤال: «أي مرحلة من الهجوم كان يمكن إيقافها بأبسط ضابط؟» الجواب: البداية — كاميرا بكلمة مرور افتراضية.</p>
+      <p><strong>رسالة الختام:</strong> الأمن السيبراني ليس منتجاً، بل عملية. الأثر الحقيقي لا يُقاس بلحظة الهجوم، بل بفترة التعافي الكاملة.</p>
+      <p><strong>نشاط تفاعلي:</strong> قسّم المشاركين لمجموعات، واطلب من كل مجموعة تحديد 3 ضوابط ستطبّقها في مؤسساتها خلال 30 يوماً، ثم اعرضها على الجميع.</p>
+    </div>
+  </section>
+
+  <!-- 17) الخاتمة -->
+  <section class="slide" data-title="الخاتمة والتوصيات">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">الخاتمة</span>
+        <h2>خارطة طريق من 6 خطوات + توصيات</h2>
+      </header>
+
+      <div class="roadmap">
+        <div class="roadmap__step"><span>1</span><strong>الجرد والتقييم</strong><p>اعرف ما تملك: الأصول، الاتصالات، الثغرات، البيانات.</p></div>
+        <div class="roadmap__step"><span>2</span><strong>التقسيم والعزل</strong><p>VLANs، شبكات فرعية، DMZ، فصل IoT و OT.</p></div>
+        <div class="roadmap__step"><span>3</span><strong>الهوية والوصول</strong><p>MFA، أقل صلاحية، إدارة الحسابات المتميزة.</p></div>
+        <div class="roadmap__step"><span>4</span><strong>الحماية والتصحيح</strong><p>NGFW، EDR، إدارة ثغرات منتظمة.</p></div>
+        <div class="roadmap__step"><span>5</span><strong>المراقبة والكشف</strong><p>SIEM، NetFlow، خط أساس سلوكي، تنبيهات.</p></div>
+        <div class="roadmap__step"><span>6</span><strong>الاستجابة والتعافي</strong><p>نسخ 3-2-1، خطة استجابة، تمارين دورية.</p></div>
+      </div>
+
+      <ul class="bullets">
+        <li>تبنَّ إطار عمل معترفاً به (NIST CSF 2.0) وقِس مستوى النضج دورياً.</li>
+        <li>ابدأ رحلة Zero Trust من الأصول الأكثر حرجاً، ووسّعها تدريجياً.</li>
+        <li>اختبر استعادة النسخ الاحتياطية فعلياً — نسخة لم تُختبر ليست نسخة.</li>
+        <li>استثمر في البشر: تدريب الموظفين وتمارين التصيد.</li>
+        <li>ابنِ خطة استجابة ودرّب عليها قبل وقوع الحادث.</li>
+      </ul>
+    </div>
+
+    <div class="notes">
+      <p><strong>رسالة الختام:</strong> لا يوجد نظام محصّن 100%، لكن يمكن تقليل المخاطر إلى مستوى مقبول وإدارة ما تبقّى.</p>
+      <p><strong>كيف تقنع الإدارة؟</strong> تحدّث بلغة الأعمال: توقف ساعة كم يكلف؟ كم عميلاً سنفقد؟ ما الغرامات؟ ثم اربط كل طلب ميزانية بأثر ملموس.</p>
+      <p><strong>ابدأ صغيراً:</strong> اختر أصلين حرجين، طبّق عليهما التقسيم و MFA والمراقبة، وقِس النتيجة، ثم وسّع.</p>
+    </div>
+  </section>
+
+  <!-- 18) المراجع -->
+  <section class="slide" data-title="المراجع">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">المصادر</span>
+        <h2>المراجع والأطر المعتمدة</h2>
+      </header>
+
+      <ol class="refs">
+        <li>NIST — <em>Cybersecurity Framework (CSF) 2.0</em>, 2024.</li>
+        <li>NIST SP 800-207 — <em>Zero Trust Architecture</em>, 2020.</li>
+        <li>NIST SP 800-82 Rev.3 — <em>Guide to OT Security</em>, 2023.</li>
+        <li>ISO/IEC 27001:2022 — <em>Information Security Management Systems</em>.</li>
+        <li>CIS — <em>Critical Security Controls v8.1</em>.</li>
+        <li>IBM Security — <em>Cost of a Data Breach Report</em>, 2024.</li>
+        <li>OWASP — <em>Internet of Things Top 10</em>.</li>
+        <li>ENISA — <em>Threat Landscape Report</em>, 2024.</li>
+        <li>IEC 62443 — <em>Industrial Communication Networks Security</em>.</li>
+        <li>MITRE ATT&CK — <em>Enterprise & ICS Matrices</em>.</li>
+      </ol>
+
+      <div class="callout">
+        <strong>IT Academy</strong> — برنامج تدريبي في أمن الشبكات والبنية التحتية. جميع الأرقام الواردة مؤشرات عامة من مصادر منشورة.
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>NIST CSF 2.0 يمنحك إطاراً متكاملاً، و CIS Controls قائمة ضوابط مرتبة، و MITRE ATT&CK خريطة لسلوك المهاجمين.</p>
+      <p>ابدأ بقراءة NIST CSF 2.0 (مجاني) ثم CIS Controls v8.1 لأنهما الأكثر عملية للتطبيق الفوري.</p>
+    </div>
+  </section>
+
+  <!-- 19) شريحة المطور (جديد) -->
+  <section class="slide" data-title="عن المطور">
+    <div class="slide__inner">
+      <header class="slide__head">
+        <span class="eyebrow">عن المطوّر</span>
+        <h2>من يقف خلف هذا العرض؟</h2>
+      </header>
+
+      <div class="developer-hero">
+        <div class="developer-hero__avatar">👨‍💻</div>
+        <div class="developer-hero__info">
+          <h3>مالك عبد الرحمن القاضي </h3>
+          <h4>خبير تقني</h4>
+          <p>خبرة متكاملة في تطوير الويب، الأمن السيبراني، البنية التحتية، الدعم الفني، وتحليل البيانات. أبني حلولاً عملية وأقدّم تدريباً يربط النظرية بالتطبيق.</p>
+          <div class="developer-hero__tags">
+            <span>البرمجة</span>
+            <span>الأمن السيبراني</span>
+            <span>البنية التحتية</span>
+            <span>تطوير المواقع</span>
+            <span>الدعم الفني</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">🤖</span>
+            <h4>الذكاء الاصطناعي وتحليل البيانات</h4>
+          </div>
+          <ul>
+            <li>Artificial Intelligence Fundamentals</li>
+            <li>Data Analysis & Visualization</li>
+            <li>Machine Learning Basics</li>
+            <li>Big Data Concepts</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">📈</span>
+            <h4>التسويق الرقمي</h4>
+          </div>
+          <ul>
+            <li>Digital Marketing</li>
+            <li>Social Media Marketing</li>
+            <li>SEO Basics</li>
+            <li>Content Strategy</li>
+            <li>E-commerce</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">🌐</span>
+            <h4>تطوير الويب</h4>
+          </div>
+          <ul>
+            <li>Frontend (HTML, CSS, JavaScript)</li>
+            <li>Backend Basics</li>
+            <li>Responsive Design</li>
+            <li>Web Hosting & Deployment</li>
+            <li>Next.js / React</li>
+            <li>WordPress</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">📱</span>
+            <h4>تطوير تطبيقات الهواتف</h4>
+          </div>
+          <ul>
+            <li>Mobile App Development</li>
+            <li>Cross-platform Development</li>
+            <li>UI/UX for Mobile</li>
+            <li>App Store Deployment</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">🖥️</span>
+            <h4>الدعم الفني والبنية التحتية</h4>
+          </div>
+          <ul>
+            <li>IT Technical Support</li>
+            <li>Computer Hardware & Troubleshooting</li>
+            <li>Operating Systems (Windows, Linux)</li>
+            <li>Software Installation & Configuration</li>
+            <li>Help Desk Operations</li>
+            <li>System Administration Basics</li>
+            <li>Virtualization (VirtualBox, VMware)</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">🌐</span>
+            <h4>الشبكات</h4>
+          </div>
+          <ul>
+            <li>TCP/IP, DNS, DHCP</li>
+            <li>Routing & Switching</li>
+            <li>Subnetting & IP Addressing</li>
+            <li>Cisco Packet Tracer</li>
+            <li>Wireless Networks</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">🔒</span>
+            <h4>الأمن السيبراني</h4>
+          </div>
+          <ul>
+            <li>Network Security</li>
+            <li>Firewalls & Antivirus</li>
+            <li>Encryption & Cryptography</li>
+            <li>Ethical Hacking Basics</li>
+            <li>Wireshark, Nmap</li>
+            <li>Kali Linux</li>
+            <li>CIA Triad</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">🎮</span>
+            <h4>تصميم وتطوير الألعاب</h4>
+          </div>
+          <ul>
+            <li>Game Design Fundamentals</li>
+            <li>Game Development Basics</li>
+            <li>Unity / Unreal Engine (basics)</li>
+            <li>2D/3D Game Assets</li>
+            <li>Storyboarding & Level Design</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">💻</span>
+            <h4>البرمجة</h4>
+          </div>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML & CSS</li>
+            <li>SQL</li>
+            <li>Object-Oriented Programming</li>
+            <li>Algorithms & Data Structures</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group__head">
+            <span class="skill-group__icon">📊</span>
+            <h4>إدارة المشاريع</h4>
+          </div>
+          <ul>
+            <li>Project Management (Agile, Scrum)</li>
+            <li>SDLC</li>
+            <li>Documentation & Reporting</li>
+            <li>Team Collaboration</li>
+            <li>Time Management</li>
+            <li>Risk Management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>هذه الشريحة تعريفية بالمطوّر والمدرّب. اذكر فيها أن الخبرة تجمع بين البُعد النظري الأكاديمي والتطبيق العملي.</p>
+      <p>ركّز على التكامل بين المجالات: الأمن السيبراني + البنية التحتية + تطوير الويب + الدعم الفني — وهو ما يجعل التدريب عملياً وشاملاً.</p>
+      <p>يمكن استبدال هذا القسم بمعلومات تواصل مباشرة (بريد إلكتروني، LinkedIn، GitHub) إذا رغبت في عرضها للجمهور.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="controls">
+  <button class="nav-btn" id="btnPrev" aria-label="الشريحة السابقة">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    <span>السابق</span>
+  </button>
+
+  <div class="counter"><span id="current">1</span><span class="counter__sep">/</span><span id="total">19</span></div>
+
+  <button class="nav-btn nav-btn--primary" id="btnNext" aria-label="الشريحة التالية">
+    <span>التالي</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+</footer>
+
+<aside class="notes-drawer" id="notesDrawer" aria-hidden="true">
+  <div class="notes-drawer__head">
+    <h3>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v13H8l-4 4V4z"/><path d="M8 9h8M8 13h5"/></svg>
+      ملاحظات المتحدث
+    </h3>
+    <button class="icon-btn icon-btn--ghost" id="btnCloseNotes" aria-label="إغلاق الملاحظات">✕</button>
+  </div>
+  <div class="notes-drawer__body" id="notesBody"></div>
+</aside>
+
+<div class="overview" id="overview" aria-hidden="true">
+  <div class="overview__panel">
+    <div class="overview__head">
+      <h3>فهرس العرض</h3>
+      <button class="icon-btn icon-btn--ghost" id="btnCloseOverview" aria-label="إغلاق الفهرس">✕</button>
+    </div>
+    <div class="overview__grid" id="overviewGrid"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
